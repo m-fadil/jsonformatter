@@ -1,69 +1,27 @@
-# React + TypeScript + Vite
+# JSON Formatter
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Editor JSON di browser: format, validasi, repair, tree/text/table view, search, sort, transform.
+Semua jalan di sisi klien — tidak ada data yang dikirim ke server.
 
-Currently, two official plugins are available:
+Isi editor otomatis tersimpan di `localStorage` (`jsonformatter:content`) dan dipulihkan saat halaman dibuka lagi.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Stack
 
-## Expanding the ESLint configuration
+React 19 · TypeScript 5.9 · Vite 8 · [vanilla-jsoneditor](https://github.com/josdejong/svelte-jsoneditor) 3 · ESLint 10
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Perintah
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev      # dev server
+npm run build    # tsc -b && vite build -> dist/
+npm run preview  # preview hasil build
+npm run lint
+npm run deploy   # build + publish dist/ ke GitHub Pages
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Catatan versi
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+TypeScript ditahan di 5.9 karena `typescript-eslint@8` masih membatasi peer `typescript <6.1`,
+dan paket `typescript@7` tidak lagi mengekspor JS compiler API yang dipakai parser-nya.
+Naikkan ke 7 setelah typescript-eslint merilis dukungannya.

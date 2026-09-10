@@ -6,7 +6,9 @@ import {
   type JsonEditor as VanillaJsonEditor,
 } from "vanilla-jsoneditor";
 
-const JSONEditor = (props: any) => {
+type Props = JSONEditorPropsOptional & { className?: string };
+
+const JSONEditor = ({ className, ...props }: Props) => {
   const refContainer = useRef<HTMLDivElement | null>(null);
   const refEditor = useRef<VanillaJsonEditor | null>(null);
   const refPrevProps = useRef<JSONEditorPropsOptional>(props);
@@ -14,14 +16,12 @@ const JSONEditor = (props: any) => {
   useEffect(() => {
     refEditor.current = createJSONEditor({
       target: refContainer.current as HTMLDivElement,
-      props,
+      props: refPrevProps.current,
     });
 
     return () => {
-      if (refEditor.current) {
-        refEditor.current.destroy();
-        refEditor.current = null;
-      }
+      refEditor.current?.destroy();
+      refEditor.current = null;
     };
   }, []);
 
@@ -34,7 +34,7 @@ const JSONEditor = (props: any) => {
     }
   }, [props]);
 
-  return <div ref={refContainer} className={props.className}></div>;
+  return <div ref={refContainer} className={className}></div>;
 };
 
 function filterUnchangedProps(
@@ -42,7 +42,9 @@ function filterUnchangedProps(
   prevProps: JSONEditorPropsOptional
 ): JSONEditorPropsOptional {
   return Object.fromEntries(
-    Object.entries(props).filter(([key, value]) => value !== prevProps[key as keyof JSONEditorPropsOptional])
+    Object.entries(props).filter(
+      ([key, value]) => value !== prevProps[key as keyof JSONEditorPropsOptional]
+    )
   );
 }
 

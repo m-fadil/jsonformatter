@@ -43,10 +43,14 @@
   --white: #ffffff;
 }
 
+body {
+  margin: 0;
+}
+
 .jsoneditor {
   --jse-theme: dark;
   width: 100%;
-  height: calc(100vh - 100px);
+  height: 100dvh;
 
   /* Over all fonts, sizes, and colors */
   --jse-font-family:
