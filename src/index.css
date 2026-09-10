@@ -1,0 +1,134 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --bg-primary: #0A0A0A;
+  --bg-secondary: #0F0F0F;
+  --bg-tertiary: #151515;
+  --bg-code: #000000;
+  --bg-soft: #1C1C1C;
+
+  --text-primary: #E0FFE0;
+  --text-secondary: #A0F0A0;
+  --text-inverse: #050505;
+
+  --border-color: #1AFF66;
+  --border-subtle: #0FAF4B;
+
+  --accent-error: #FF3366;
+  --accent-warning: #FFEE33;
+  --accent-info: #33EEFF;
+  --accent-brand: #00FF99;
+  --accent-brand-light: #66FFCC;
+
+  --syntax-key: #FF33CC;
+  --syntax-string: #33EEFF;
+  --syntax-number: #00FF99;
+  --syntax-boolean: #FFFF33;
+  --syntax-null: #AAAAAA;
+  --syntax-delimiter: #DDDDDD;
+
+  --white: #FFFFFF;
+}
+
+.jsoneditor {
+  --jse-theme: dark;
+
+  /* Over all fonts, sizes, and colors */
+  --jse-font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  --jse-font-family-mono: consolas, menlo, monaco, 'Ubuntu Mono', 'source-code-pro', monospace;
+  --jse-font-size-mono: 14px;
+  --jse-theme-color: var(--bg-secondary);
+  --jse-theme-color-highlight: var(--bg-primary);
+  --jse-background-color: var(--bg-code);
+  --jse-text-color: var(--text-primary);
+  --jse-text-color-inverse: var(--text-inverse);
+  --jse-text-readonly: var(--text-secondary);
+  --jse-error-color: var(--accent-error);
+  --jse-warning-color: var(--accent-warning);
+  --jse-info-color: var(--accent-info);
+
+  /* Main, menu, modal */
+  --jse-main-border: 0 solid var(--border-color);
+  --jse-menu-color: var(--text-secondary);
+  --jse-modal-background: var(--bg-secondary);
+  --jse-modal-overlay-background: rgba(0, 0, 0, 0.3);
+  --jse-modal-code-background: var(--bg-tertiary);
+
+  /* Tooltip in text mode */
+  --jse-tooltip-color: var(--text-primary);
+  --jse-tooltip-background: var(--bg-secondary);
+  --jse-tooltip-border: 1px solid var(--border-color);
+  --jse-tooltip-action-button-color: var(--text-inverse);
+  --jse-tooltip-action-button-background: var(--text-primary);
+
+  /* Panels: navigation bar, gutter, search box */
+  --jse-panel-background: var(--bg-secondary);
+  --jse-panel-color: var(--text-primary);
+  --jse-panel-color-readonly: var(--text-secondary);
+  --jse-panel-border: 1px solid var(--border-color);
+  --jse-panel-button-color-highlight: var(--text-primary);
+  --jse-panel-button-background-highlight: var(--bg-tertiary);
+
+  /* Navigation bar */
+  --jse-navigation-bar-background: var(--bg-primary);
+  --jse-navigation-bar-background-highlight: var(--bg-secondary);
+  --jse-navigation-bar-dropdown-color: var(--text-primary);
+
+  /* Context menu */
+  --jse-context-menu-background: var(--bg-secondary);
+  --jse-context-menu-background-highlight: var(--bg-tertiary);
+  --jse-context-menu-color: var(--text-primary);
+  --jse-context-menu-separator-color: var(--border-color);
+  --jse-context-menu-pointer-background: var(--bg-secondary);
+  --jse-context-menu-pointer-background-highlight: var(--bg-tertiary);
+  --jse-context-menu-pointer-color: var(--text-primary);
+
+  /* Contents: JSON key and values */
+  --jse-key-color: var(--syntax-key);
+  --jse-value-color: var(--syntax-string);
+  --jse-value-color-number: var(--syntax-number);
+  --jse-value-color-boolean: var(--syntax-boolean);
+  --jse-value-color-null: var(--syntax-null);
+  --jse-value-color-string: var(--syntax-string);
+  --jse-value-color-url: var(--syntax-string);
+  --jse-delimiter-color: var(--syntax-delimiter);
+  --jse-edit-outline: 2px solid var(--border-color);
+
+  /* Selected or hovered */
+  --jse-selection-background-color: var(--bg-soft);
+  --jse-hover-background-color: var(--bg-soft);
+
+  /* Controls in modals: inputs, buttons, and `a` */
+  --jse-input-background: var(--bg-primary);
+  --jse-input-color: var(--text-primary);
+  --jse-input-border: 1px solid var(--border-color);
+  --jse-button-background: var(--border-subtle);
+  --jse-button-primary-background: var(--accent-brand);
+  --jse-button-primary-color: var(--white);
+  --jse-button-secondary-background: var(--border-subtle);
+  --jse-a-color: var(--accent-info);
+  --jse-a-color-highlight: var(--accent-brand-light);
+
+  /* Table Cells */
+  --jse-table-header-background: var(--bg-tertiary);
+  --jse-table-header-background-highlight: var(--bg-secondary);
+  --jse-table-row-odd-background: var(--bg-primary);
+
+  /* Tags */
+  --jse-tag-background: var(--bg-tertiary);
+  --jse-tag-color: var(--text-primary);
+}
