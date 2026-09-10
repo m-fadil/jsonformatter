@@ -14,37 +14,39 @@
 }
 
 :root {
-  --bg-primary: #0A0A0A;
-  --bg-secondary: #0F0F0F;
-  --bg-tertiary: #151515;
-  --bg-code: #000000;
-  --bg-soft: #1C1C1C;
+  --bg-primary: #282c34;
+  --bg-secondary: #21252b;
+  --bg-tertiary: #2c313a;
+  --bg-code: #1d1f24;
+  --bg-soft: #3e4451;
 
-  --text-primary: #E0FFE0;
-  --text-secondary: #A0F0A0;
-  --text-inverse: #050505;
+  --text-primary: #abb2bf;
+  --text-secondary: #7f848e;
+  --text-inverse: #1a1d23;
 
-  --border-color: #1AFF66;
-  --border-subtle: #0FAF4B;
+  --border-color: #4b5363;
+  --border-subtle: #5c6370;
 
-  --accent-error: #FF3366;
-  --accent-warning: #FFEE33;
-  --accent-info: #33EEFF;
-  --accent-brand: #00FF99;
-  --accent-brand-light: #66FFCC;
+  --accent-error: #e06c75;
+  --accent-warning: #e5c07b;
+  --accent-info: #61afef;
+  --accent-brand: #528bff;
+  --accent-brand-light: #7fbcff;
 
-  --syntax-key: #FF33CC;
-  --syntax-string: #33EEFF;
-  --syntax-number: #00FF99;
-  --syntax-boolean: #FFFF33;
-  --syntax-null: #AAAAAA;
-  --syntax-delimiter: #DDDDDD;
+  --syntax-key: #c678dd;
+  --syntax-string: #98c379;
+  --syntax-number: #d19a66;
+  --syntax-boolean: #56b6c2;
+  --syntax-null: #7f848e;
+  --syntax-delimiter: #abb2bf
 
-  --white: #FFFFFF;
+  --white: #ffffff;
 }
 
 .jsoneditor {
   --jse-theme: dark;
+  width: 100%;
+  height: calc(100vh - 100px);
 
   /* Over all fonts, sizes, and colors */
   --jse-font-family:
